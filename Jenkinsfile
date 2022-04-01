@@ -39,5 +39,11 @@ pipeline {
                 bat 'mvn sonar:sonar -Dsonar.login=f3811202efe8a39190d20b74da68b6b2f9b8faa5'
                      }
                }
+        stage('nexus') {
+                 steps {
+
+              nexusArtifactUploader credentialsId: 'nexusCR', groupId: 'pom.com.mycompany.app', nexusUrl: 'http://localhost:8081/#admin', nexusVersion: 'nexus2', protocol: 'http', repository: 'simpleRep', version: 'pom.1.0-SNAPSHOT'
+                   }
+                }
         }
     }
