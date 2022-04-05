@@ -41,7 +41,7 @@ pipeline {
                }
                stage('nexus'){
                    steps{
-                      nexusArtifactUploader artifacts: [[artifactId: 'my-app', classifier: '', file: 'pom.xml', type:'jar']], credentialsId: 'nexusCR', groupId:'com.mycompany.app', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mavja', version:'1.0-SNAPSHOT'
+                      nexusArtifactUploader artifacts: [[artifactId: 'pom.my-app', classifier: '', file: 'pom.xml', type:'jar']], credentialsId: 'nexusCR', groupId:'pom.com.mycompany.app', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'mavja', version:'pom.1.0-SNAPSHOT'
 
                    }
                }
